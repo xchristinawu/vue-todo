@@ -6,11 +6,21 @@
 
   const input_content = ref('');
   const input_category = ref(null);
+  const filter_category = ref(null);
 
-  const todos_asc = computed(() => todos.value.sort((a, b) => {
-    return b.createdAt - a.created;
-    
-  }));
+  const todos_filtered = computed(() => todos.value.sort((a, b) => b.createdAt - a.createdAt)
+                                                   .filter(todo => {
+                                                      return !filter_category.value || filter_category.value == 'all' ?
+                                                      todo.category == "work" || todo.category == "personal" :
+                                                      todo.category == filter_category.value
+                                                    }));
+                                                  
+
+  const setFilterCategory = (e) => {
+    filter_category.value = e.target.value;
+    console.log(filter_category)
+    console.log(todos_filtered);
+  }
 
   const addTodo = () => {
     if (input_content.value.trim() === '' || input_category.value === null) {
@@ -74,11 +84,11 @@
             <input 
               type="radio" 
               name="category"
-              value="business"
+              value="work"
               v-model="input_category" 
             />
-            <span class="bubble business"></span>
-            <div>Business</div>
+            <span class="bubble work"></span>
+            <div>Work</div>
           </label>
 
           <label>
@@ -100,9 +110,36 @@
 
     <section class="todo-list">
       <h3>TODO LIST</h3>
+      <div class="filter">
+        <p>Filter: </p>
+        <button 
+          class="filter-all-btn"
+          :class="{ 'all-selected': filter_category == 'all'}"
+          value="all"
+          @click="setFilterCategory"
+        >
+          Select All
+        </button>
+        <button 
+          class="filter-work-btn"
+          :class="{ 'work-selected': filter_category == 'work'}"
+          value="work" 
+          @click="setFilterCategory"
+        >
+          Work
+        </button>
+        <button 
+          class="filter-personal-btn"
+          :class="{ 'personal-selected': filter_category == 'personal'}"
+          value="personal" 
+          @click="setFilterCategory"
+        >
+          Personal
+        </button>
+      </div>
       <div class="list">
         <div 
-          v-for="todo in todos_asc" 
+          v-for="todo in todos_filtered" 
           :class="`todo-item ${todo.done && 'done'}`"
         >
           <label>

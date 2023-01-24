@@ -1,6 +1,6 @@
 :root {
 	--primary: #EA40A4;
-	--business: #3A82EE;
+	--work: #3A82EE;
 	--personal: var(--primary);
 	--light: #EEE;
 	--grey: #888;
@@ -9,7 +9,7 @@
 
 	--shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 
-	--business-glow: 0px 0px 4px rgba(58, 130, 238, 0.75);
+	--work-glow: 0px 0px 4px rgba(58, 130, 238, 0.75);
 	--personal-glow: 0px 0px 4px rgba(234, 64, 164, 0.75);
 }
 
@@ -114,8 +114,8 @@ input[type="checkbox"] {
 	width: 20px;
 	height: 20px;
 	border-radius: 50%;
-	border: 2px solid var(--business);
-	box-shadow: var(--business-glow);
+	border: 2px solid var(--work);
+	box-shadow: var(--work-glow);
 }
 
 .bubble.personal {
@@ -129,8 +129,8 @@ input[type="checkbox"] {
 	opacity: 0;
 	width: 0px;
 	height: 0px;
-	background-color: var(--business);
-	box-shadow: var(--business-glow);
+	background-color: var(--work);
+	box-shadow: var(--work-glow);
 	border-radius: 50%;
 	transition: 0.2s ease-in-out;
 }
@@ -228,4 +228,44 @@ input:checked ~ .bubble::after {
 .todo-item.done .todo-content input {
 	text-decoration: line-through;
 	color: var(--grey);
+}
+
+.filter {
+    display: flex;
+    align-items: center;
+}
+
+.filter-all-btn,
+.filter-work-btn,
+.filter-personal-btn {
+    border-radius: 20px;
+    padding: 5px;
+    margin-left: 5px;
+}
+
+.filter-all-btn {
+    border: 1px solid var(--dark);
+}
+
+.filter-work-btn {
+    border: 1px solid var(--work);
+}
+
+.filter-personal-btn {
+    border: 1px solid var(--personal);
+}
+
+.all-selected {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+.work-selected {
+    background-color: var(--work);
+    color: var(--light);
+}
+
+.personal-selected {
+    background-color: var(--personal);
+    color: var(--light);
 }

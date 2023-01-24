@@ -1,7 +1,25 @@
-# Vue 3 + Vite
+# Todo App
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Followed Tyler Pott's [Vue Todo App tutorial](https://www.youtube.com/watch?v=qhjxAP1hFuI) on YouTube and learned how to build my second project on Vue.
 
-## Recommended IDE Setup
+## Table of Contents
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- [Overview](#overview)
+  - [Goals](#goals)
+  - [Screenshots](#screenshots)
+  - [Built with](#built-with)
+
+## Overview
+
+### Learning Goals
+
+- Save to and retrieve from local storage
+- Composition API
+
+### Screenshot
+<img src="./src/assets/vue-weather-ss.png" alt="Vue Weather Screenshot" width="60%"/>
+
+### Built with
+
+- HTML, CSS, JavaScript, Vue
+
