@@ -15,9 +15,10 @@ Followed Tyler Pott's [Vue Todo App tutorial](https://www.youtube.com/watch?v=qh
 
 - Save to and retrieve from local storage
 - Composition API
+- v-model, v-bind, v-for
 
 ### Screenshot
-<img src="./src/assets/vue-weather-ss.png" alt="Vue Weather Screenshot" width="60%"/>
+<img src="./src/img/vue-todo-ss.png" alt="Vue Todo Screenshot" width="60%"/>
 
 ### Built with
 
